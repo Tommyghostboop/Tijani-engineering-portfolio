@@ -1,74 +1,895 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Tijani Quwam Tomiwa — Mechanical Engineering, Maintenance and Reliability portfolio">
+<meta name="description" content="Tijani Quwam Tomiwa — Mechanical Engineer working in heavy-equipment maintenance, predictive maintenance and reliability engineering.">
+<meta name="theme-color" content="#FBFAF8">
 <title>Tijani Quwam Tomiwa | Mechanical Engineer</title>
 <style>
-:root{--bg:#070707;--card:#111;--line:#292929;--txt:#f5f5f5;--muted:#999;--max:1160px}
-*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Arial,sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.04;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:44px 44px}
-a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:5;background:#070707dd;backdrop-filter:blur(12px);border-bottom:1px solid #222}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:800;letter-spacing:.12em;font-size:13px}.links{display:flex;gap:22px;color:#aaa;font-size:13px}.links a:hover{color:#fff}
-.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:70px 0}
-.eyebrow,.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#888;font-weight:800}
-h1,h2,h3{font-family:Arial,sans-serif}h1{font-size:clamp(55px,8vw,105px);line-height:.9;letter-spacing:-.07em;margin:18px 0 25px}h1 span{color:#777}
-.lead{max-width:680px;color:#c5c5c5;font-size:18px}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;border:1px solid #444;padding:11px 17px;border-radius:99px;font-weight:700;font-size:13px}.primary{background:#f5f5f5;color:#080808;border-color:#f5f5f5}
-.heroimg{height:590px;border:1px solid var(--line);border-radius:26px;overflow:hidden;position:relative;background:#111}.heroimg img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%)}.heroimg div{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,#000)}
-section{padding:90px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}.head p{max-width:470px;color:var(--muted)}h2{font-size:clamp(36px,5vw,62px);line-height:.98;letter-spacing:-.05em;margin:7px 0}
-.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:linear-gradient(145deg,#121212,#0c0c0c);border:1px solid var(--line);border-radius:22px;padding:28px}.card p{color:#aaa}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{border:1px solid var(--line);border-radius:17px;padding:22px}.stat b{font-size:30px;display:block}.stat small{color:#888}
-.timeline{border-left:1px solid #333;padding-left:28px}.item{padding:0 0 28px;position:relative}.item:before{content:"";position:absolute;left:-34px;top:7px;width:10px;height:10px;border-radius:50%;background:#fff}.date{color:#777;font-size:11px;letter-spacing:.12em}.item h3{margin:4px 0;font-size:18px}.item p{color:#999;margin:0}
-.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}.project{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#0d0d0d}.project img{width:100%;height:270px;object-fit:cover;filter:grayscale(80%)}.project .body{padding:23px}.tag{font-size:10px;color:#888;letter-spacing:.16em}.project h3{font-size:22px;margin:8px 0}.project p{color:#999;margin:0}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.chip{border:1px solid #2b2b2b;border-radius:99px;padding:4px 8px;font-size:10px;color:#aaa}
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{border:1px solid var(--line);border-radius:18px;padding:21px}.skill b{display:block;margin-bottom:8px}.skill span{color:#999;font-size:13px}
-.impact{display:grid;grid-template-columns:.7fr 1.3fr;gap:20px}.big{font-size:clamp(70px,10vw,130px);line-height:.8;font-weight:800;letter-spacing:-.08em}.impact h3{font-size:25px}.impact p{color:#aaa}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact a{display:block;margin:10px 0;color:#ccc}
-footer{border-top:1px solid var(--line);padding:25px 0 40px;color:#777;font-size:12px;display:flex;justify-content:space-between}
-@media(max-width:850px){.hero,.grid2,.impact,.contact{grid-template-columns:1fr}.heroimg{height:480px}.projects{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.links{display:none}}
-@media(max-width:520px){.wrap{padding:0 16px}section{padding:65px 0}.skills{grid-template-columns:1fr}h1{font-size:60px}.heroimg{height:400px}}
+/* ============================================================
+   DESIGN TOKENS — Signal Orange on warm paper
+   ============================================================ */
+:root{
+  color-scheme: light;
+
+  --bg:        #FBFAF8;   /* warm paper, never sterile white */
+  --surface:   #FFFFFF;
+  --surface-2: #F4F2ED;
+  --ink:       #12141A;   /* near-black, never pure #000 */
+  --ink-70:    #3A3F4A;
+  --muted:     #5C6270;   /* 5.9:1 on --bg */
+  --line:      #E4E2DC;
+  --line-2:    #D2CEC4;
+
+  --accent:      #E8590C; /* graphics, rules, large numerals */
+  --accent-ink:  #B8460A; /* small accent text — 5.2:1 on --bg */
+  --accent-btn:  #C9490A; /* button fill — white text 4.7:1 */
+  --accent-wash: #FDF1E8;
+  --support:     #0B3A5D;
+
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --max: 1160px;
+  --r:   18px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 16px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+/* engineering paper — faint accent grid */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:
+    linear-gradient(rgba(232,89,12,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,89,12,.055) 1px, transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 75%);
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:var(--max);margin:auto;padding:0 28px;position:relative;z-index:1}
+
+/* ============================================================
+   TYPE
+   ============================================================ */
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.02}
+h1{font-size:clamp(52px,8.4vw,104px);letter-spacing:-.055em;line-height:.88}
+h2{font-size:clamp(34px,4.8vw,58px);line-height:.98;letter-spacing:-.04em}
+h3{font-size:19px;letter-spacing:-.015em}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+
+.kicker{
+  font:700 11px/1 var(--mono);
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-ink);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.kicker::after{content:"";height:1px;width:44px;background:var(--accent);opacity:.45}
+
+.eyebrow{
+  font:700 11px/1 var(--mono);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+}
+.dot{color:var(--accent)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(251,250,248,.82);
+  backdrop-filter:saturate(1.6) blur(14px);
+  -webkit-backdrop-filter:saturate(1.6) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{font:800 12px/1 var(--mono);letter-spacing:.18em}
+.brand i{font-style:normal;color:var(--accent)}
+.links{display:flex;gap:26px}
+.links a{
+  position:relative;font:600 13px/1 var(--sans);color:var(--muted);
+  padding:6px 0;transition:color .28s var(--ease);
+}
+.links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .38s var(--ease);
+}
+.links a:hover{color:var(--ink)}
+.links a:hover::after{transform:scaleX(1)}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--line-2);background:var(--surface);
+  padding:12px 20px;border-radius:99px;
+  font:700 13px/1 var(--sans);color:var(--ink);
+  transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 22px -12px rgba(232,89,12,.55)}
+.btn.primary{background:var(--accent-btn);border-color:var(--accent-btn);color:#fff}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);box-shadow:0 10px 26px -10px rgba(232,89,12,.7)}
+.btn .arw{transition:transform .3s var(--ease)}
+.btn:hover .arw{transform:translateX(3px)}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+section{padding:104px 0;scroll-margin-top:68px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:44px}
+.head p{max-width:400px;color:var(--muted);font-size:15px;margin:0}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:calc(100vh - 68px);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+  padding:64px 0;
+}
+.hero h1{margin:20px 0 0}
+.stance{
+  margin:26px 0 18px;font-size:clamp(19px,2vw,23px);font-weight:600;
+  letter-spacing:-.02em;line-height:1.35;max-width:19ch;
+  border-left:3px solid var(--accent);padding-left:16px;
+}
+.lead{max-width:56ch;color:var(--ink-70);font-size:17px}
+
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.cred{
+  font:700 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--line);background:var(--surface);
+  padding:8px 11px;border-radius:99px;
+}
+.cred b{color:var(--accent-ink);font-weight:700}
+
+.heroimg{
+  position:relative;aspect-ratio:4/5;max-height:600px;
+  border-radius:var(--r);overflow:hidden;
+  background:var(--surface-2);border:1px solid var(--line);
+}
+.heroimg img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.heroimg figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:20px 22px;
+  font:600 11px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#fff;
+  background:linear-gradient(transparent, rgba(10,11,14,.86));
+}
+/* accent corner registration marks */
+.heroimg::before,.heroimg::after{
+  content:"";position:absolute;width:26px;height:26px;border:2px solid var(--accent);z-index:2;
+}
+.heroimg::before{top:14px;left:14px;border-right:0;border-bottom:0}
+.heroimg::after{top:14px;right:14px;border-left:0;border-bottom:0}
+
+/* ============================================================
+   STAT BAND
+   ============================================================ */
+.band{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.band div{padding:30px 26px 30px 0}
+.band div + div{padding-left:26px;border-left:1px solid var(--line)}
+.band b{
+  display:block;font-size:clamp(32px,3.6vw,46px);font-weight:800;
+  letter-spacing:-.05em;line-height:1;color:var(--accent);
+}
+.band small{display:block;margin-top:10px;color:var(--muted);font-size:13px;line-height:1.45}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+.card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);padding:32px;
+  transition:border-color .35s var(--ease), box-shadow .35s var(--ease), transform .35s var(--ease);
+}
+.card p{color:var(--ink-70)}
+.card:hover{border-color:var(--line-2);box-shadow:0 18px 40px -30px rgba(18,20,26,.5)}
+
+.edu{display:grid;grid-template-columns:1fr .8fr;gap:26px;align-items:center}
+.edu img{border-radius:12px;aspect-ratio:3/4;object-fit:cover;object-position:50% 22%;width:100%}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{
+  border:1px solid var(--line);background:var(--surface);
+  border-radius:14px;padding:22px;position:relative;overflow:hidden;
+}
+.stat::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--accent);transform:scaleY(0);transform-origin:top;
+  transition:transform .4s var(--ease);
+}
+.stat:hover::before{transform:scaleY(1)}
+.stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em}
+.stat small{color:var(--muted);font-size:12.5px;line-height:1.5;display:block;margin-top:6px}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.timeline{position:relative;padding-left:34px}
+.timeline::before{
+  content:"";position:absolute;left:0;top:6px;bottom:26px;width:2px;background:var(--line);
+}
+.timeline::after{
+  content:"";position:absolute;left:0;top:6px;bottom:26px;width:2px;
+  background:var(--accent);transform-origin:top;transform:scaleY(1);
+}
+.item{padding:0 0 38px;position:relative}
+.item::before{
+  content:"";position:absolute;left:-40px;top:6px;width:12px;height:12px;
+  border-radius:50%;background:var(--bg);border:2px solid var(--accent);z-index:2;
+  transition:background .3s var(--ease), transform .3s var(--ease);
+}
+.item:hover::before{background:var(--accent);transform:scale(1.25)}
+.date{font:700 11px/1 var(--mono);letter-spacing:.16em;color:var(--accent-ink)}
+.item h3{margin:9px 0 7px}
+.item .org{color:var(--muted);font-size:13.5px;font-weight:600;margin-bottom:8px}
+.item p{color:var(--ink-70);max-width:66ch;margin:0}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.project{
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  background:var(--surface);position:relative;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.project::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;z-index:3;
+  transition:transform .45s var(--ease);
+}
+.project:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 26px 50px -34px rgba(18,20,26,.6)}
+.project:hover::before{transform:scaleX(1)}
+
+.shot{height:264px;overflow:hidden;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+/* technical renders read better whole than cropped */
+.shot.fit{background:var(--surface)}
+.shot.fit img{object-fit:contain;padding:14px}
+.project:hover .shot img{transform:scale(1.045)}
+.tile{height:264px;background:var(--surface-2);border-bottom:1px solid var(--line);display:block}
+.tile svg{width:100%;height:100%;display:block}
+
+.project .body{padding:26px}
+.tag{font:700 10px/1 var(--mono);letter-spacing:.18em;color:var(--accent-ink)}
+.project h3{font-size:21px;margin:10px 0 10px}
+.project p{color:var(--ink-70);margin:0;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.chip{
+  font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:7px 10px;color:var(--muted);
+  transition:border-color .3s var(--ease), color .3s var(--ease);
+}
+.project:hover .chip{border-color:#EBD6C6;color:var(--ink-70)}
+
+/* ============================================================
+   TECHNICAL DRAWINGS (inline SVG)
+   ============================================================ */
+.dwg .ln{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dwg .lt{fill:none;stroke:var(--ink);stroke-width:1;opacity:.34}
+.dwg .ac{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dwg .acf{fill:var(--accent);stroke:none}
+.dwg .wash{fill:var(--accent-wash);stroke:none}
+.dwg .solid{fill:var(--surface);stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.dwg .dash{stroke-dasharray:5 5}
+.dwg text{font:700 8.5px/1 var(--mono);letter-spacing:.13em;fill:var(--muted)}
+.dwg text.hi{fill:var(--accent-ink)}
+.dwg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.skill{
+  border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:24px;
+  transition:border-color .35s var(--ease), transform .35s var(--ease);
+}
+.skill:hover{border-color:var(--accent);transform:translateY(-3px)}
+.skill b{display:block;margin-bottom:10px;font-size:15px}
+.skill span{color:var(--muted);font-size:13.5px;line-height:1.6}
+
+/* ============================================================
+   IMPACT
+   ============================================================ */
+.impact{display:grid;grid-template-columns:.62fr 1.38fr;gap:36px;align-items:start}
+.big{
+  font-size:clamp(64px,9vw,116px);line-height:.82;font-weight:800;
+  letter-spacing:-.06em;color:var(--accent);
+}
+.impact h3{font-size:22px;margin-bottom:14px}
+.impact p{color:var(--ink-70)}
+.note{display:block;margin-top:16px;color:var(--muted);font-size:12px;font-style:italic}
+
+/* ============================================================
+   CONTACT + FOOTER
+   ============================================================ */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact .card h3{margin-bottom:16px}
+.clink{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:14px 0;border-bottom:1px solid var(--line);
+  font-weight:600;color:var(--ink);
+  transition:padding-left .3s var(--ease), color .3s var(--ease);
+}
+.clink:hover{padding-left:8px;color:var(--accent-ink)}
+.clink span:last-child{color:var(--accent);transition:transform .3s var(--ease)}
+.clink:hover span:last-child{transform:translateX(4px)}
+
+footer{
+  border-top:1px solid var(--line);padding:30px 0 48px;
+  color:var(--muted);font:600 12px/1.6 var(--mono);letter-spacing:.08em;
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+
+/* ============================================================
+   MOTION — CSS scroll-driven, progressive enhancement only.
+   Everything is fully visible by default; animation is added
+   ONLY where the browser supports it and motion is welcome.
+   ============================================================ */
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes spine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion: no-preference){
+
+  /* hero entrance — runs on load, no scroll needed */
+  .anim{animation:enter .9s var(--ease) both}
+  .d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.27s}
+  .d4{animation-delay:.38s}.d5{animation-delay:.49s}.d6{animation-delay:.60s}
+
+  @supports (animation-timeline: view()){
+    .rise{
+      animation:rise .8s linear both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 52%;
+    }
+    .timeline::after{
+      animation:spine 1s linear both;
+      animation-timeline:view();
+      animation-range:entry 12% cover 58%;
+    }
+    .dwg .draw{
+      animation:draw 1s linear both;
+      animation-timeline:view();
+      animation-range:entry 18% cover 42%;
+    }
+    .dwg .pop{
+      animation:fade 1s linear both;
+      animation-timeline:view();
+      animation-range:entry 34% cover 46%;
+    }
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:44px;padding-top:48px}
+  .heroimg{max-height:460px}
+  .grid2,.impact,.contact{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .band{grid-template-columns:1fr 1fr}
+  .band div:nth-child(3){border-left:0}
+  .band div:nth-child(n+3){border-top:1px solid var(--line)}
+  .links{display:none}
+  section{padding:76px 0}
+  .head{flex-direction:column;align-items:flex-start;gap:18px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  section{padding:58px 0}
+  .skills{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .edu{grid-template-columns:1fr}
+  .edu img{aspect-ratio:4/3;max-height:280px}
+  .band{grid-template-columns:1fr}
+  .band div{padding:22px 0!important;border-left:0!important}
+  .band div + div{border-top:1px solid var(--line)}
+  .card{padding:24px}
+  .stance{font-size:19px;max-width:none}
+  footer{flex-direction:column;gap:8px}
+}
+
+/* ============================================================
+   PRINT — this is a CV; it should survive Ctrl+P
+   ============================================================ */
+@media print{
+  body::before,nav,.heroimg,.buttons{display:none}
+  body{background:#fff;font-size:11pt}
+  section{padding:18pt 0;break-inside:avoid}
+  .hero{min-height:0;grid-template-columns:1fr;padding:0}
+  h1{font-size:34pt}h2{font-size:18pt}
+  .project,.card,.skill,.stat{break-inside:avoid;border-color:#ccc}
+  .projects,.skills,.grid2,.contact{grid-template-columns:1fr 1fr}
+  .tile,.shot{height:150pt}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#666}
+}
 </style></head>
 <body>
-<nav><div class="wrap nav"><a class="brand" href="#top">TQT / ENGINEERING</a><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+
+<nav><div class="wrap nav">
+  <a class="brand" href="#top">TQT <i>/</i> ENGINEERING</a>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
 <main id="top"><div class="wrap">
-<section class="hero"><div><div class="eyebrow">Mechanical Engineering · Maintenance · Reliability</div>
-<h1>Tijani<br><span>Quwam</span><br>Tomiwa.</h1>
-<p class="lead">Mechanical Engineering graduate with hands-on experience in heavy equipment maintenance, predictive maintenance, vibration analysis and Reliability-Centered Maintenance — focused on practical engineering and reliable systems.</p>
-<div class="buttons"><a class="btn primary" href="#projects">Explore Projects</a><a class="btn" href="Tomiwa_Tijani_Master_CV_Updated.docx">View CV</a><a class="btn" href="https://www.linkedin.com/in/quwam-tijani-5625862a5" target="_blank">LinkedIn ↗</a></div></div>
-<div class="heroimg"><img src="assets/professional-headshot.png" alt="Tijani Quwam Tomiwa"><div>B.Eng. Mechanical Engineering · FUNAAB · Nigeria</div></div></section>
 
-<section id="about"><div class="head"><div><div class="kicker">01 / Profile</div><h2>Engineering with<br>hands-on depth.</h2></div><p>Machines, reliability, problem-solving, teamwork and continuous learning.</p></div>
-<div class="grid2"><div class="card"><p>I am a Mechanical Engineering graduate from the Federal University of Agriculture, Abeokuta, with practical exposure to heavy machinery, maintenance engineering and automotive systems.</p><p>At IITA, I progressed from Heavy Equipment Maintenance Intern to Contract Staff, continuing hands-on work in preventive, predictive and corrective maintenance, manual vibration analysis, equipment diagnostics and RCM support.</p><p>My projects span machine design and modification, engine systems, structural prototypes, automated sensing and low-power electrical systems.</p></div>
-<div class="stats"><div class="stat"><b>2+</b><small>Years of practical engineering exposure</small></div><div class="stat"><b>5+</b><small>Featured engineering projects</small></div><div class="stat"><b>200K+</b><small>People reached through outreach</small></div><div class="stat"><b>B.Eng.</b><small>Mechanical Engineering · FUNAAB</small></div></div></div></section>
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="hero">
+  <div>
+    <div class="eyebrow anim d1">Mechanical Engineering <span class="dot">·</span> Maintenance <span class="dot">·</span> Reliability</div>
+    <h1 class="anim d2">Tijani<br>Quwam<br>Tomiwa<span style="color:var(--accent)">.</span></h1>
+    <p class="stance anim d3">I find failures before they find the fleet.</p>
+    <p class="lead anim d4">Mechanical engineer working in heavy-equipment maintenance at IITA. I run preventive and predictive routines on rotating plant, read vibration by hand against baseline, and design the fix when the machine — or the process around it — turns out to be the problem.</p>
+    <div class="buttons anim d5">
+      <a class="btn primary" href="#projects">Explore Projects <span class="arw">→</span></a>
+      <a class="btn" href="Tomiwa_Tijani_Master_CV_Updated.docx">Download CV <span class="arw">↓</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/quwam-tijani-5625862a5" target="_blank" rel="noopener">LinkedIn <span class="arw">↗</span></a>
+    </div>
+    <div class="creds anim d6">
+      <span class="cred"><b>B.Eng.</b> Mechanical · FUNAAB</span>
+      <span class="cred"><b>NSE</b> Inductee</span>
+      <span class="cred"><b>IITA</b> Contract Staff</span>
+    </div>
+  </div>
+  <figure class="heroimg anim d3" style="margin:0">
+    <img src="assets/professional-headshot.png" alt="Portrait of Tijani Quwam Tomiwa">
+    <figcaption>Abeokuta / Ibadan · Nigeria — open to relocation</figcaption>
+  </figure>
+</section>
 
-<section id="experience"><div class="head"><div><div class="kicker">02 / Experience</div><h2>Where theory<br>meets machinery.</h2></div><p>Heavy equipment, automotive systems and operations.</p></div>
-<div class="timeline">
-<div class="item"><div class="date">NOV 2025 — PRESENT</div><h3>Heavy Equipment Maintenance Contract Staff · IITA</h3><p>Preventive, predictive and corrective maintenance; manual vibration analysis; equipment diagnostics; RCM support; mechanical troubleshooting and maintenance documentation.</p></div>
-<div class="item"><div class="date">JUL 2024 — DEC 2024</div><h3>Heavy Equipment Maintenance Intern · IITA</h3><p>Applied preventive, predictive and corrective maintenance; supported vibration analysis, diagnostics and RCM activities; worked with technical professionals on safe, reliable equipment operation.</p></div>
-<div class="item"><div class="date">FEB 2024 — MAR 2024</div><h3>Automobile Mechanic Intern · Skyline Auto Garage</h3><p>Assisted with engine, transmission and automotive diagnostic/repair work; participated in engine overhaul and routine maintenance.</p></div>
-<div class="item"><div class="date">OPERATIONS</div><h3>Operations Manager · Solegracey Enterprises</h3><p>Managed daily operations and stock-taking for a 25-seat restaurant and led a three-person team.</p></div>
-</div></section>
+<!-- ══════════════════════ STAT BAND ══════════════════════ -->
+<div class="band rise">
+  <div><b>2+</b><small>Years hands-on with heavy plant and rotating equipment</small></div>
+  <div><b>6</b><small>Projects designed, built, modelled or overhauled</small></div>
+  <div><b>3</b><small>Maintenance disciplines run daily — preventive, predictive, corrective</small></div>
+  <div><b>NSE</b><small>Inducted member, Nigerian Society of Engineers</small></div>
+</div>
 
-<section id="projects"><div class="head"><div><div class="kicker">03 / Selected Work</div><h2>Projects built<br>to solve problems.</h2></div><p>Practical engineering thinking across machines, automotive systems, structures, automation and energy.</p></div>
-<div class="projects">
-<article class="project"><img src="assets/engine-workshop.jpg" alt="Built tyre debeading machine"><div class="body"><div class="tag">MACHINE DESIGN</div><h3>Tyre Debeading Machine</h3><p>Designed, built and modified a tyre debeading machine, implementing ergonomic improvements and reinforced structural components for faster bead separation and reduced downtime.</p><div class="chips"><span class="chip">Fabrication</span><span class="chip">Machine Design</span><span class="chip">Ergonomics</span></div></div></article>
-<article class="project"><img src="assets/tyre-debeading-cad.png" alt="CAD concept of tyre debeading machine"><div class="body"><div class="tag">DESIGN / CAD</div><h3>Tyre Debeader — CAD Concept</h3><p>CAD representation of the machine architecture, frame, work surface, bead-separation mechanism and drive arrangement.</p><div class="chips"><span class="chip">CAD</span><span class="chip">Mechanical Systems</span><span class="chip">Prototype</span></div></div></article>
-<article class="project"><img src="assets/restoration-automotive-engine.jpg" alt="Engine workshop project"><div class="body"><div class="tag">AUTOMOTIVE</div><h3>Engine Disassembly & Overhaul</h3><p>Worked with a mechanic to disassemble a four-cylinder engine for educational identification of components and functions; also participated in four-cylinder petrol and six-cylinder diesel engine overhauls.</p><div class="chips"><span class="chip">Engine Systems</span><span class="chip">Diagnostics</span><span class="chip">Overhaul</span></div></div></article>
-<article class="project"><div style="height:270px;display:grid;place-items:center;background:#141414"><div style="border:1px solid #555;border-radius:20px;padding:45px;text-align:center"><b>WATER LEVEL<br>ALARM</b><br><small style="color:#888">ULTRASONIC SENSOR + BUZZER</small></div></div><div class="body"><div class="tag">AUTOMATION</div><h3>Water Level Detection & Alarm</h3><p>Collaborated with junior engineers to prototype an automated water-level detection and alarm system using ultrasonic sensors and buzzer modules for real-time overflow alerts.</p><div class="chips"><span class="chip">Sensors</span><span class="chip">Automation</span><span class="chip">Prototyping</span></div></div></article>
-<article class="project"><div style="height:270px;display:grid;place-items:center;background:#121212"><div style="width:170px;height:170px;border:2px solid #777;transform:perspective(400px) rotateX(55deg) rotateZ(45deg);display:grid;place-items:center"><small style="transform:rotateZ(-45deg);color:#aaa">TRUSS SYSTEM</small></div></div><div class="body"><div class="tag">STRUCTURAL ENGINEERING</div><h3>Eiffel Tower Structural Prototype</h3><p>Built a scaled space-frame model to explore geometric stability, node connections and compressive/tensile force paths using low-cost materials.</p></div></article>
-<article class="project"><div style="height:270px;display:grid;place-items:center;background:#0f0f0f"><div style="text-align:center"><div style="font-size:65px">◉</div><b>PORTABLE LED</b><br><small style="color:#888">LOW-POWER DC LIGHTING</small></div></div><div class="body"><div class="tag">ELECTRICAL / FABRICATION</div><h3>Portable Low-Power LED Lighting</h3><p>Designed and fabricated a battery-powered LED lighting prototype focused on energy efficiency, runtime and reliable illumination.</p></div></article>
-</div></section>
+<!-- ══════════════════════ 01 PROFILE ══════════════════════ -->
+<section id="about">
+  <div class="head rise">
+    <div><div class="kicker">01 / Profile</div><h2>Engineering with<br>hands-on depth.</h2></div>
+    <p>Maintenance is a discipline, not a reaction. Most of what I do happens before anything breaks.</p>
+  </div>
+  <div class="grid2 rise">
+    <div class="card">
+      <p>I trained as a mechanical engineer at the Federal University of Agriculture, Abeokuta, and I've spent the time since on workshop floors rather than away from them — heavy plant, engines, and the maintenance systems that decide whether either keeps running.</p>
+      <p>At IITA I started as a heavy-equipment maintenance intern and was retained as contract staff. The work is preventive schedules, predictive routines and corrective repair — plus the part most people skip: writing down what was found, what was done and what it means for next time. A maintenance record nobody can read is the same as no record at all.</p>
+      <p>When maintenance alone can't solve the problem, I build. A tyre debeading machine that was punishing the person operating it. A sensor rig that calls an overflow before it happens. The instinct is the same either way: find the failure mode, then remove it.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>Predictive</b><small>Manual vibration analysis on rotating equipment, read against baseline</small></div>
+      <div class="stat"><b>Preventive</b><small>Scheduled servicing and inspection routines across the heavy fleet</small></div>
+      <div class="stat"><b>Corrective</b><small>Fault diagnosis, mechanical troubleshooting and repair execution</small></div>
+      <div class="stat"><b>RCM</b><small>Reliability-Centred Maintenance support and failure documentation</small></div>
+    </div>
+  </div>
+</section>
 
-<section id="skills"><div class="head"><div><div class="kicker">04 / Capabilities</div><h2>Technical toolkit.</h2></div></div>
-<div class="skills"><div class="skill"><b>Maintenance & Reliability</b><span>Preventive · Predictive · Corrective Maintenance · Vibration Analysis · RCM · Equipment Diagnostics</span></div><div class="skill"><b>Mechanical Engineering</b><span>Mechanical Troubleshooting · Heavy Machinery · Engine Systems · Machine Design · Fabrication</span></div><div class="skill"><b>Engineering Tools</b><span>AutoCAD · Microsoft Excel · MS Project · Python (Basic Scripting)</span></div><div class="skill"><b>Professional</b><span>Technical Reporting · Team Collaboration · Project Management · Critical Thinking · Operations</span></div><div class="skill"><b>Systems Thinking</b><span>Condition monitoring · Failure identification · Reliability improvement · Prototyping · Process improvement</span></div><div class="skill"><b>Career Direction</b><span>Heavy Equipment · Energy · Industrial Engineering · Automotive · Manufacturing · Reliability & Field Engineering</span></div></div></section>
+<!-- ══════════════════════ 02 EXPERIENCE ══════════════════════ -->
+<section id="experience">
+  <div class="head rise">
+    <div><div class="kicker">02 / Experience</div><h2>Where theory<br>meets machinery.</h2></div>
+    <p>Heavy equipment, automotive systems, and the operations discipline that surrounds both.</p>
+  </div>
+  <div class="timeline rise">
 
-<section><div class="head"><div><div class="kicker">05 / Leadership & Impact</div><h2>Engineering is<br>also people.</h2></div><p>Communication, stakeholder engagement and teamwork at scale.</p></div>
-<div class="card impact"><div><div class="big">200K+</div><small style="color:#777">people reached through large-scale outreach</small></div><div><h3>Large-Scale Outreach & Stakeholder Engagement</h3><p>Contributed to a team that conducted large-scale outreach reaching over 200,000 people to mobilize participation in an annual city-wide gathering attended by thousands.</p><p>Supported strategic stakeholder engagement involving senior military officers, industry executives, multinational managers, prominent entrepreneurs, senior religious leaders and other high-profile stakeholders.</p><small style="color:#777">Team-based contribution; figures reflect the scale of the wider initiative.</small></div></div></section>
+    <div class="item">
+      <div class="date">NOV 2025 — PRESENT</div>
+      <h3>Heavy Equipment Maintenance — Contract Staff</h3>
+      <div class="org">International Institute of Tropical Agriculture (IITA)</div>
+      <p>Retained after the internship to run preventive, predictive and corrective work on the heavy fleet. I take manual vibration readings on rotating equipment and compare them against baseline to catch bearing wear and misalignment while the fix is still cheap — before a failing bearing takes the shaft with it. Findings feed RCM decisions, and every intervention is documented well enough to be useful to whoever opens the file next.</p>
+    </div>
 
-<section><div class="head"><div><div class="kicker">06 / Education & Training</div><h2>Foundation.<br>Then practice.</h2></div></div><div class="grid2"><div class="card"><div class="kicker">2019 — 2025</div><h3>B.Eng. Mechanical Engineering</h3><p>Federal University of Agriculture, Abeokuta (FUNAAB), Nigeria.</p><p>Relevant coursework: Maintenance Engineering, Vibration, Mechanics of Machines, Thermodynamics.</p></div><div class="card"><div class="kicker">Training</div><p><b>Oil & Gas Management: Safety and Health</b> — Alison</p><p><b>Leadership Training</b> — The Training Institute, TSC International</p><p><b>Lean Manufacturing</b> — Udemy</p></div></div></section>
+    <div class="item">
+      <div class="date">JUL 2024 — DEC 2024</div>
+      <h3>Heavy Equipment Maintenance Intern</h3>
+      <div class="org">International Institute of Tropical Agriculture (IITA)</div>
+      <p>Learned the fleet from the ground up — scheduled servicing, fault diagnosis, and the discipline of measuring before replacing. Worked alongside senior technicians on vibration analysis and RCM activities, and on the safety practice that all heavy-equipment work is built on.</p>
+    </div>
 
-<section id="contact"><div class="head"><div><div class="kicker">07 / Contact</div><h2>Let's build<br>what's next.</h2></div><p>Open to engineering opportunities, technical collaborations and conversations about machines, maintenance and reliability.</p></div>
-<div class="contact"><div class="card"><h3>Connect</h3><a href="mailto:tijaniquwam5@gmail.com">tijaniquwam5@gmail.com ↗</a><a href="https://www.linkedin.com/in/quwam-tijani-5625862a5" target="_blank">LinkedIn ↗</a><a href="https://wa.me/2349169457156" target="_blank">WhatsApp ↗</a></div><div class="card"><h3>For recruiters</h3><p>My background combines hands-on heavy-equipment maintenance, reliability-focused engineering and practical project work.</p><a class="btn primary" href="Tomiwa_Tijani_Master_CV_Updated.docx">Open CV →</a></div></div></section>
+    <div class="item">
+      <div class="date">FEB 2024 — MAR 2024</div>
+      <h3>Automobile Mechanic Intern</h3>
+      <div class="org">Skyline Auto Garage</div>
+      <p>Engine, transmission and diagnostic work on customer vehicles, including full engine overhauls. Stripping and rebuilding an engine is the fastest way to stop treating it as a black box and start thinking in tolerances, wear patterns and torque sequence.</p>
+    </div>
+
+    <div class="item">
+      <div class="date">OPERATIONS</div>
+      <h3>Operations Manager</h3>
+      <div class="org">Solegracey Enterprises</div>
+      <p>Ran daily operations, stock control and a three-person team for a 25-seat restaurant. Different domain, same engineering problem: throughput, scheduling, and what you do when something breaks mid-service.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ 03 PROJECTS ══════════════════════ -->
+<section id="projects">
+  <div class="head rise">
+    <div><div class="kicker">03 / Selected Work</div><h2>Projects built<br>to solve problems.</h2></div>
+    <p>Each one started as something that wasn't working — a slow process, a hidden failure, a load path nobody could see.</p>
+  </div>
+  <div class="projects">
+
+    <!-- 1 — built machine, real photograph -->
+    <article class="project rise">
+      <div class="shot"><img src="assets/tyre-debeading-machine.jpg" alt="The fabricated tyre debeading machine: welded steel frame, work table, bead-separation head and belt-driven motor" style="object-position:50% 62%"></div>
+      <div class="body">
+        <div class="tag">MACHINE DESIGN / BUILD</div>
+        <h3>Tyre Debeading Machine</h3>
+        <p>Separating a tyre bead by hand is slow, and it is hard on the person doing it. I designed, fabricated and then modified a powered debeading machine — reworking the frame for rigidity under load and repositioning the controls so the operator isn't fighting the machine to use it. Faster bead separation, less downtime, and a job that stops being punishing.</p>
+        <div class="chips"><span class="chip">Fabrication</span><span class="chip">Welded Frame</span><span class="chip">Machine Design</span><span class="chip">Ergonomics</span></div>
+      </div>
+    </article>
+
+    <!-- 2 — CAD render -->
+    <article class="project rise">
+      <div class="shot fit"><img src="assets/tyre-debeading-cad.png" alt="Isometric CAD model of the tyre debeading machine showing frame, work surface, bead-separation head and motor"></div>
+      <div class="body">
+        <div class="tag">DESIGN / CAD</div>
+        <h3>Tyre Debeader — CAD Model</h3>
+        <p>The machine modelled before it was cut: frame geometry, work surface, the bead-separation head and the belt-driven motor slung underneath. Settling the clearances and the drive layout on screen meant settling them once — not twice in steel.</p>
+        <div class="chips"><span class="chip">CAD</span><span class="chip">3D Modelling</span><span class="chip">Drive Layout</span><span class="chip">Design for Fabrication</span></div>
+      </div>
+    </article>
+
+    <!-- 3 — engine overhaul, drawn -->
+    <article class="project rise">
+      <div class="tile">
+        <svg class="dwg" viewBox="0 0 480 270" role="img" aria-label="Cross-section drawing of a single engine cylinder showing valve train, piston with rings, connecting rod and crankshaft">
+          <!-- crankcase -->
+          <path class="ln draw" pathLength="1" d="M100 176 L90 198 A70 70 0 0 0 218 198 L208 176"/>
+          <!-- block -->
+          <path class="ln draw" pathLength="1" d="M100 62 h108 v114 h-108 z"/>
+          <!-- cylinder head -->
+          <path class="ln draw" pathLength="1" d="M92 28 h116 a6 6 0 0 1 6 6 v28 h-128 v-28 a6 6 0 0 1 6 -6 z"/>
+          <!-- bore walls -->
+          <path class="lt" d="M120 62 V176"/><path class="lt" d="M188 62 V176"/>
+          <!-- combustion chamber roof -->
+          <path class="lt" d="M124 62 Q154 48 184 62"/>
+          <!-- valves: stem, seat face, spring -->
+          <path class="ln" d="M128 18 L133 60"/><path class="ln" d="M180 18 L175 60"/>
+          <path class="ln" d="M123 60 H145"/><path class="ln" d="M163 60 H185"/>
+          <path class="lt" d="M123 24 L137 29 L123 34 L137 39 L123 44 L137 49 L124 53"/>
+          <path class="lt" d="M171 24 L185 29 L171 34 L185 39 L171 44 L185 49 L184 53"/>
+          <!-- piston -->
+          <rect class="solid" x="120" y="88" width="68" height="42" rx="2"/>
+          <!-- compression rings -->
+          <path class="ac draw" pathLength="1" d="M120 94 H188"/>
+          <path class="ac draw" pathLength="1" d="M120 100 H188"/>
+          <path class="ac draw" pathLength="1" d="M120 106 H188"/>
+          <!-- crank throw path -->
+          <circle class="lt dash" cx="154" cy="212" r="26" fill="none"/>
+          <!-- connecting rod -->
+          <path class="solid" d="M149.1 115.2 L166.2 197.9 L181.8 194.1 L158.9 112.8 Z"/>
+          <!-- gudgeon pin -->
+          <circle class="solid" cx="154" cy="114" r="7"/>
+          <!-- crank web, main journal, crank pin -->
+          <path class="solid" d="M148.4 205 L168.4 189 L179.6 203 L159.6 219 Z"/>
+          <circle class="solid" cx="154" cy="212" r="11"/>
+          <circle class="acf pop" cx="174" cy="196" r="8"/>
+          <!-- leaders -->
+          <path class="lt" d="M262 42 H222"/><circle class="lt" cx="220" cy="42" r="2.5" fill="none"/>
+          <path class="lt" d="M262 100 H194"/><circle class="lt" cx="192" cy="100" r="2.5" fill="none"/>
+          <path class="lt" d="M262 158 H190"/><circle class="lt" cx="188" cy="158" r="2.5" fill="none"/>
+          <path class="lt" d="M262 212 H186"/><circle class="lt" cx="184" cy="212" r="2.5" fill="none"/>
+          <!-- labels -->
+          <text x="270" y="46">01</text><text x="292" y="46" class="hi">VALVE TRAIN</text>
+          <text x="270" y="104">02</text><text x="292" y="104" class="hi">PISTON + RINGS</text>
+          <text x="270" y="162">03</text><text x="292" y="162" class="hi">CONNECTING ROD</text>
+          <text x="270" y="216">04</text><text x="292" y="216" class="hi">CRANKSHAFT</text>
+          <text x="270" y="250">SINGLE CYLINDER — CROSS SECTION</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="tag">AUTOMOTIVE / OVERHAUL</div>
+        <h3>Engine Disassembly &amp; Overhaul</h3>
+        <p>Stripped a four-cylinder engine to component level to map what every part does and how it fails, then worked overhauls on both four-cylinder petrol and six-cylinder diesel units. Valve train, piston assemblies, bearing shells, torque sequence — the reason a component fails is usually written on its wear face, if you know how to read it.</p>
+        <div class="chips"><span class="chip">Engine Systems</span><span class="chip">Overhaul</span><span class="chip">Diagnostics</span><span class="chip">Tolerances</span></div>
+      </div>
+    </article>
+
+    <!-- 4 — ultrasonic level, drawn -->
+    <article class="project rise">
+      <div class="tile">
+        <svg class="dwg" viewBox="0 0 480 270" role="img" aria-label="Schematic of an ultrasonic water-level alarm: sensor above a tank measuring distance to the water surface, wired through a microcontroller to a buzzer">
+          <!-- mounting bracket -->
+          <path class="ln" d="M56 40 H244"/>
+          <!-- sensor module -->
+          <rect class="solid" x="132" y="40" width="52" height="24" rx="3"/>
+          <circle class="solid" cx="146" cy="64" r="6"/><circle class="solid" cx="170" cy="64" r="6"/>
+          <!-- tank -->
+          <path class="ln draw" pathLength="1" d="M60 60 V240 H240 V60"/>
+          <!-- water -->
+          <rect class="wash" x="61" y="156" width="178" height="83"/>
+          <path class="ac draw" pathLength="1" d="M60 156 q15 -7 30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
+          <!-- ultrasonic cone -->
+          <path class="lt" d="M132 86 Q158 98 184 86"/>
+          <path class="lt" d="M122 104 Q158 122 194 104"/>
+          <path class="lt" d="M112 124 Q158 148 204 124"/>
+          <!-- setpoint -->
+          <path class="ac dash" d="M60 126 H240"/>
+          <text x="66" y="120" class="hi">SET POINT</text>
+          <!-- dimension d -->
+          <path class="lt" d="M256 68 V156"/>
+          <path class="lt" d="M250 68 H262"/><path class="lt" d="M250 156 H262"/>
+          <text x="266" y="116" class="hi">d</text>
+          <!-- signal path -->
+          <path class="lt" d="M184 52 H300"/>
+          <rect class="solid" x="300" y="38" width="58" height="30" rx="3"/>
+          <text x="313" y="57">MCU</text>
+          <path class="lt" d="M329 68 V122"/>
+          <!-- buzzer -->
+          <circle class="solid" cx="329" cy="146" r="22"/>
+          <path class="acf pop" d="M320 136 h6 l9 -8 v36 l-9 -8 h-6 z"/>
+          <path class="lt pop" d="M358 132 Q368 146 358 160"/>
+          <path class="lt pop" d="M368 122 Q383 146 368 170"/>
+          <!-- readout -->
+          <path class="lt" d="M290 196 H430"/>
+          <text x="290" y="214">ULTRASONIC TX / RX</text>
+          <text x="290" y="230" class="hi">d &lt; SET POINT → ALARM</text>
+          <text x="290" y="246">CONDITION MONITORING LOOP</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="tag">AUTOMATION / SENSING</div>
+        <h3>Water Level Detection &amp; Alarm</h3>
+        <p>An overflow is a failure you can see coming. Working with junior engineers, I prototyped an ultrasonic sensor that measures the distance to the water surface and fires a buzzer once that distance crosses the set point. It is the same loop as condition monitoring — measure, compare to a threshold, act early — applied to a tank instead of a bearing.</p>
+        <div class="chips"><span class="chip">Ultrasonic Sensing</span><span class="chip">Threshold Logic</span><span class="chip">Prototyping</span></div>
+      </div>
+    </article>
+
+    <!-- 5 — space frame, drawn -->
+    <article class="project rise">
+      <div class="tile">
+        <svg class="dwg" viewBox="0 0 480 270" role="img" aria-label="Space-frame tower diagram: legs carrying compression, diagonal bracing carrying tension, pinned nodes at each level">
+          <!-- applied load -->
+          <path class="ac" d="M180 4 V16"/><path class="acf" d="M180 22 l-4 -7 h8 z"/>
+          <text x="188" y="14" class="hi">P</text>
+          <!-- legs (compression) -->
+          <path class="ac draw" pathLength="1" d="M108 246 L126 196 L140 146 L151 104 L160 68 L168 40 L174 26"/>
+          <path class="ac draw" pathLength="1" d="M252 246 L234 196 L220 146 L209 104 L200 68 L192 40 L186 26"/>
+          <path class="ac" d="M174 26 H186"/>
+          <!-- chords -->
+          <path class="ln" d="M108 246 H252"/><path class="ln" d="M126 196 H234"/>
+          <path class="ln" d="M140 146 H220"/><path class="ln" d="M151 104 H209"/>
+          <path class="ln" d="M160 68 H200"/><path class="ln" d="M168 40 H192"/>
+          <!-- diagonals (tension) -->
+          <g class="lt dash">
+            <path d="M108 246 L234 196"/><path d="M252 246 L126 196"/>
+            <path d="M126 196 L220 146"/><path d="M234 196 L140 146"/>
+            <path d="M140 146 L209 104"/><path d="M220 146 L151 104"/>
+            <path d="M151 104 L200 68"/><path d="M209 104 L160 68"/>
+            <path d="M160 68 L192 40"/><path d="M200 68 L168 40"/>
+          </g>
+          <!-- nodes -->
+          <g class="acf pop">
+            <circle cx="108" cy="246" r="3.4"/><circle cx="252" cy="246" r="3.4"/>
+            <circle cx="126" cy="196" r="3.4"/><circle cx="234" cy="196" r="3.4"/>
+            <circle cx="140" cy="146" r="3.4"/><circle cx="220" cy="146" r="3.4"/>
+            <circle cx="151" cy="104" r="3.4"/><circle cx="209" cy="104" r="3.4"/>
+            <circle cx="160" cy="68"  r="3.4"/><circle cx="200" cy="68"  r="3.4"/>
+            <circle cx="168" cy="40"  r="3.4"/><circle cx="192" cy="40"  r="3.4"/>
+          </g>
+          <!-- ground -->
+          <path class="ln" d="M92 250 H268"/>
+          <g class="lt">
+            <path d="M96 250 l-6 8"/><path d="M112 250 l-6 8"/><path d="M128 250 l-6 8"/>
+            <path d="M144 250 l-6 8"/><path d="M160 250 l-6 8"/><path d="M176 250 l-6 8"/>
+            <path d="M192 250 l-6 8"/><path d="M208 250 l-6 8"/><path d="M224 250 l-6 8"/>
+            <path d="M240 250 l-6 8"/><path d="M256 250 l-6 8"/><path d="M268 250 l-6 8"/>
+          </g>
+          <!-- legend -->
+          <path class="ac" d="M310 84 H336"/>
+          <text x="344" y="87" class="hi">COMPRESSION</text>
+          <text x="344" y="100">LEGS / CHORDS</text>
+          <path class="lt dash" d="M310 126 H336"/>
+          <text x="344" y="129" class="hi">TENSION</text>
+          <text x="344" y="142">DIAGONAL BRACING</text>
+          <circle class="acf" cx="323" cy="167" r="3.4"/>
+          <text x="344" y="170" class="hi">PINNED NODE</text>
+          <text x="344" y="183">12 CONNECTIONS</text>
+          <text x="310" y="216">TRIANGULATION RESISTS</text>
+          <text x="310" y="230">RACKING — THE GEOMETRY</text>
+          <text x="310" y="244">CANNOT FOLD.</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="tag">STRUCTURES</div>
+        <h3>Eiffel Tower Structural Prototype</h3>
+        <p>A scaled space-frame model built from low-cost material to make load paths visible. Every member is either pushing or pulling, and triangulation is what stops the geometry folding under its own eccentricity — easy to state on paper, and much harder to forget once you have felt a badly braced bay go soft in your hands.</p>
+        <div class="chips"><span class="chip">Space Frame</span><span class="chip">Triangulation</span><span class="chip">Load Paths</span><span class="chip">Prototyping</span></div>
+      </div>
+    </article>
+
+    <!-- 6 — LED circuit, drawn -->
+    <article class="project rise">
+      <div class="tile">
+        <svg class="dwg" viewBox="0 0 480 270" role="img" aria-label="Circuit schematic: DC battery, switch, and three parallel current-limited LED strings each with its own series resistor">
+          <!-- left rail + battery -->
+          <path class="ln draw" pathLength="1" d="M100 60 V118"/>
+          <path class="ln" d="M88 118 H112"/><path class="ln" d="M94 126 H106"/>
+          <path class="ln" d="M88 134 H112"/><path class="ln" d="M94 142 H106"/>
+          <path class="ln draw" pathLength="1" d="M100 146 V210"/>
+          <text x="46" y="134" class="hi">12 V DC</text>
+          <!-- top rail with switch -->
+          <path class="ln draw" pathLength="1" d="M100 60 H150"/>
+          <path class="ln draw" pathLength="1" d="M180 60 H350"/>
+          <circle class="acf" cx="150" cy="60" r="3.2"/><circle class="acf" cx="180" cy="60" r="3.2"/>
+          <path class="ac" d="M150 60 L178 44"/>
+          <text x="152" y="34" class="hi">SW</text>
+          <!-- bottom rail -->
+          <path class="ln draw" pathLength="1" d="M100 210 H350"/>
+          <!-- branch 1 -->
+          <path class="ln" d="M220 60 V96"/><rect class="solid" x="211" y="96" width="18" height="34" rx="2"/>
+          <path class="ln" d="M220 130 V150"/>
+          <path class="acf pop" d="M208 150 H232 L220 172 Z"/><path class="ac" d="M208 172 H232"/>
+          <path class="ln" d="M220 172 V210"/>
+          <text x="236" y="118">R1</text>
+          <!-- branch 2 -->
+          <path class="ln" d="M285 60 V96"/><rect class="solid" x="276" y="96" width="18" height="34" rx="2"/>
+          <path class="ln" d="M285 130 V150"/>
+          <path class="acf pop" d="M273 150 H297 L285 172 Z"/><path class="ac" d="M273 172 H297"/>
+          <path class="ln" d="M285 172 V210"/>
+          <text x="301" y="118">R2</text>
+          <!-- branch 3 -->
+          <path class="ln" d="M350 60 V96"/><rect class="solid" x="341" y="96" width="18" height="34" rx="2"/>
+          <path class="ln" d="M350 130 V150"/>
+          <path class="acf pop" d="M338 150 H362 L350 172 Z"/><path class="ac" d="M338 172 H362"/>
+          <path class="ln" d="M350 172 V210"/>
+          <text x="366" y="118">R3</text>
+          <!-- emission arrows -->
+          <g class="lt pop">
+            <path d="M236 154 l11 -10"/><path d="M236 164 l11 -10"/>
+            <path d="M301 154 l11 -10"/><path d="M301 164 l11 -10"/>
+            <path d="M366 154 l11 -10"/><path d="M366 164 l11 -10"/>
+          </g>
+          <!-- junction dots -->
+          <g class="acf">
+            <circle cx="220" cy="60" r="3.2"/><circle cx="285" cy="60" r="3.2"/>
+            <circle cx="220" cy="210" r="3.2"/><circle cx="285" cy="210" r="3.2"/>
+          </g>
+          <!-- notes -->
+          <path class="lt" d="M100 232 H400"/>
+          <text x="100" y="250" class="hi">3 × CURRENT-LIMITED LED STRINGS — PARALLEL TOPOLOGY</text>
+          <text x="100" y="264">ONE OPEN STRING DOES NOT KILL THE UNIT</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="tag">ELECTRICAL / FABRICATION</div>
+        <h3>Portable Low-Power LED Lighting</h3>
+        <p>A battery-powered lighting unit designed around runtime rather than peak brightness — current-limited parallel strings, sized so the pack lasts a full working session instead of an impressive first hour. Wiring the strings in parallel was deliberate: a single open string dims the unit, it doesn't switch it off.</p>
+        <div class="chips"><span class="chip">DC Circuits</span><span class="chip">Energy Budget</span><span class="chip">Fabrication</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ 04 CAPABILITIES ══════════════════════ -->
+<section id="skills">
+  <div class="head rise">
+    <div><div class="kicker">04 / Capabilities</div><h2>Technical toolkit.</h2></div>
+    <p>What I actually reach for, in roughly the order I reach for it.</p>
+  </div>
+  <div class="skills rise">
+    <div class="skill"><b>Maintenance &amp; Reliability</b><span>Preventive · Predictive · Corrective maintenance · Manual vibration analysis · RCM · Equipment diagnostics · Condition monitoring</span></div>
+    <div class="skill"><b>Mechanical Engineering</b><span>Mechanical troubleshooting · Heavy machinery · Engine systems · Machine design · Welding &amp; fabrication</span></div>
+    <div class="skill"><b>Engineering Tools</b><span>AutoCAD · 3D modelling · Microsoft Excel · MS Project · Python (basic scripting)</span></div>
+    <div class="skill"><b>Failure Thinking</b><span>Failure-mode identification · Root-cause reasoning · Baseline comparison · Reliability improvement · Process improvement</span></div>
+    <div class="skill"><b>Professional</b><span>Technical reporting · Maintenance documentation · Team collaboration · Project management · Operations</span></div>
+    <div class="skill"><b>Direction</b><span>Heavy equipment · Energy · Industrial &amp; manufacturing engineering · Automotive · Reliability &amp; field engineering</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 05 LEADERSHIP ══════════════════════ -->
+<section>
+  <div class="head rise">
+    <div><div class="kicker">05 / Leadership &amp; Impact</div><h2>Engineering is<br>also people.</h2></div>
+    <p>Machines fail quietly. Coordination fails loudly. Both need managing.</p>
+  </div>
+  <div class="card impact rise">
+    <div>
+      <div class="big">200K<span style="font-size:.5em">+</span></div>
+      <small style="color:var(--muted);font:600 11px/1.6 var(--mono);letter-spacing:.12em">PEOPLE REACHED THROUGH LARGE-SCALE OUTREACH</small>
+    </div>
+    <div>
+      <h3>Outreach &amp; stakeholder engagement at scale</h3>
+      <p>I contributed to a team running an outreach programme that reached over 200,000 people, mobilising participation in an annual city-wide gathering attended by thousands. Coordinating that many moving parts is a scheduling and communication problem before it is anything else.</p>
+      <p>I also supported stakeholder engagement with senior military officers, industry executives, multinational managers, entrepreneurs and senior religious leaders — the practice of explaining something technical to someone who needs the conclusion, not the working.</p>
+      <small class="note">Team-based contribution; the figure reflects the scale of the wider initiative, not individual output.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 06 EDUCATION ══════════════════════ -->
+<section>
+  <div class="head rise">
+    <div><div class="kicker">06 / Education &amp; Training</div><h2>Foundation.<br>Then practice.</h2></div>
+    <p>Inducted into the Nigerian Society of Engineers on graduation.</p>
+  </div>
+  <div class="grid2 rise">
+    <div class="card edu">
+      <div>
+        <div class="kicker">2019 — 2025</div>
+        <h3>B.Eng. Mechanical Engineering</h3>
+        <p style="margin-top:8px">Federal University of Agriculture, Abeokuta (FUNAAB), Nigeria — College of Engineering.</p>
+        <p><b>Relevant coursework:</b> Maintenance Engineering, Mechanical Vibration, Mechanics of Machines, Thermodynamics, Engineering Design.</p>
+        <div class="creds" style="margin-top:18px"><span class="cred"><b>NSE</b> Inductee</span><span class="cred">COLENG Graduate</span></div>
+      </div>
+      <img src="assets/graduation-portrait.jpg" alt="Tijani Quwam Tomiwa at graduation wearing an NSE Inductee and COLENG Graduate sash, holding a FUNAAB engineering hard hat">
+    </div>
+    <div class="card">
+      <div class="kicker">Training</div>
+      <p style="margin-top:6px"><b>Oil &amp; Gas Management: Safety and Health</b><br><span style="color:var(--muted);font-size:14px">Alison</span></p>
+      <p><b>Lean Manufacturing</b><br><span style="color:var(--muted);font-size:14px">Udemy</span></p>
+      <p><b>Leadership Training</b><br><span style="color:var(--muted);font-size:14px">The Training Institute, TSC International</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 07 CONTACT ══════════════════════ -->
+<section id="contact">
+  <div class="head rise">
+    <div><div class="kicker">07 / Contact</div><h2>Let's build<br>what's next.</h2></div>
+    <p>Open to engineering roles, technical collaboration, and any conversation about machines that ought to be running better.</p>
+  </div>
+  <div class="contact rise">
+    <div class="card">
+      <h3>Connect</h3>
+      <a class="clink" href="mailto:tijaniquwam5@gmail.com"><span>tijaniquwam5@gmail.com</span><span>→</span></a>
+      <a class="clink" href="https://www.linkedin.com/in/quwam-tijani-5625862a5" target="_blank" rel="noopener"><span>LinkedIn</span><span>↗</span></a>
+      <a class="clink" href="https://wa.me/2349169457156" target="_blank" rel="noopener"><span>WhatsApp</span><span>↗</span></a>
+    </div>
+    <div class="card">
+      <h3>For recruiters</h3>
+      <p>Heavy-equipment maintenance, predictive and reliability-centred practice, and design-and-build project work — with the documentation habits to make any of it auditable.</p>
+      <p style="color:var(--muted);font-size:14px">Based in Nigeria. Available for field, workshop and plant-based roles.</p>
+      <div class="buttons"><a class="btn primary" href="Tomiwa_Tijani_Master_CV_Updated.docx">Open full CV <span class="arw">→</span></a></div>
+    </div>
+  </div>
+</section>
+
 </div></main>
-<footer class="wrap"><span>© 2026 Tijani Quwam Tomiwa</span><span>Mechanical Engineering · Maintenance · Reliability</span></footer>
+
+<footer class="wrap">
+  <span>© 2026 TIJANI QUWAM TOMIWA</span>
+  <span>MECHANICAL <i class="dot">·</i> MAINTENANCE <i class="dot">·</i> RELIABILITY</span>
+</footer>
+
 </body></html>
